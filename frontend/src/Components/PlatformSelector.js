@@ -1,5 +1,5 @@
 // src/Components/PlarformSelector.js
-function PlatformSelector ({ active, handleActive, metadata }) {
+function PlatformSelector ({ active, handleActive }) {
 
   const platforms = [
     'WhatsApp',
@@ -13,7 +13,7 @@ function PlatformSelector ({ active, handleActive, metadata }) {
   ]
 
   return (
-    <div className={`w-full p-1 bg-zinc-200 text-zinc-500 flex items-center justify-center flex-wrap mt-2 md:rounded-full md:m-auto md:w-5/6 lg:w-4/6 xl:w-3/6 ${metadata ? '' : 'hidden'}`}>
+    <div className={`w-full p-1 bg-zinc-200 text-zinc-500 flex items-center justify-center flex-wrap mt-2 md:rounded-full md:m-auto md:w-5/6 lg:w-4/6 xl:w-3/6`}>
 
       {platforms.map((platform, index) => (
 

@@ -1,5 +1,4 @@
 // src/App.js
-
 import './index';
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -15,24 +14,39 @@ import TelegramPreview from './Components/TelegramPreview';
 import InstagramPreview from './Components/InstagramPreview';
 import DiscordPreview from './Components/DiscordPreview';
 import TamTamPreview from './Components/TamTamPreview';
+import ModalBtn from './Components/ModalBtn';
+import MetadataModal from './Components/MetadataModal';
 
 function App () {
   const [search, setSearch] = useState('');
   const [activePlatform, setactivePlatform] = useState('');
   const [activeExample, setActiveExample] = useState('');
   const [metadata, setMetadata] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleExampleClick = (url) => {
     setActiveExample(url);
     setSearch(url);
+    fetchMetadata(url);
   }
 
   const handleSearchChange = (newSearch) => {
     setSearch(newSearch);
     if (newSearch) {
       setActiveExample(newSearch);
+      fetchMetadata(newSearch);
     }
   }
+
+  const fetchMetadata = async (url) => {
+    try {
+      const response = await fetch(`/api/get-metadata?url=${encodeURIComponent(url)}`);
+      const data = await response.json();
+      setMetadata(data);
+    } catch (error) {
+      console.error('Error fetching metadata:', error);
+    }
+  };
 
   const handlePlatformClick = (platform) => {
     setactivePlatform(platform)
@@ -42,6 +56,17 @@ function App () {
     setMetadata(data);
   }
 
+  const handleModalOpen = () => {
+    setIsModalOpen(true);
+  }
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+  }
+
+  const handleSaveMetadata = (newMetadata) => {
+    setMetadata(newMetadata);
+  }
 
 
   return (
@@ -63,9 +88,13 @@ function App () {
       <Examples active={activeExample} handleActive={handleExampleClick} />
 
 
+      {/* BOTÓN MODAL */}
+      <ModalBtn metadata={metadata} openModal={handleModalOpen} />
+
 
       {/* PLATAFORMAS */}
-      <PlatformSelector active={activePlatform} handleActive={handlePlatformClick} metadata={metadata} />
+      {metadata ? <PlatformSelector active={activePlatform} handleActive={handlePlatformClick} /> : ''}
+
 
       {/* PREVISUALIZACIÓN */}
       <div className='w-full flex justify-center items-center my-6'>
@@ -78,6 +107,14 @@ function App () {
         {activePlatform === 'Discord' && <DiscordPreview metadata={metadata} />}
         {activePlatform === 'TamTam' && <TamTamPreview metadata={metadata} />}
       </div>
+
+      {/* MODAL DE METADATOS */}
+      <MetadataModal
+        isOpen={isModalOpen}
+        onClose={handleModalClose}
+        metadata={metadata}
+        onSave={handleSaveMetadata}
+      />
 
 
     </div>
