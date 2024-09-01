@@ -75,7 +75,7 @@ function MetadataModal ({ isOpen, onClose, metadata, onSave }) {
         <button
           onClick={handleSubmit}
           className="w-full bg-white text-black border border-black border-2 p-2 rounded-full mt-4 transition-colors duration-200 hover:bg-black hover:text-white">
-          <FontAwesomeIcon icon={faWandMagicSparkles} /> Generar Previsualizaciones
+          <FontAwesomeIcon icon={faWandMagicSparkles} /> Generar
         </button>
       </div>
     </div>

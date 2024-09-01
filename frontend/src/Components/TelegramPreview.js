@@ -10,12 +10,12 @@ function TelegramPreview ({ metadata }) {
       <div className="w-11/12 p-4 border rounded-lg sm:w-9/12 md:w-1/2 lg:w-4/12">
         <a href={url} className="text-blue-500 mb-2 inline-block">{url}</a>
         <div className="flex bg-neutral-100 rounded-md border border-l-4 border-t-0 border-r-0 border-b-0 border-neutral-500">
-          <div className='flex flex-col ml-2 w-9/12'>
+          <div className='flex flex-col ml-2 w-8/12 sm:w-9/12'>
             <p className="text-sm text-gray-400 mt-auto">{publisher}</p>
             <h3 className="font-bold truncate mt-1">{title}</h3>
             <p className="text-sm text-gray-700 truncate">{description}</p>
           </div>
-          {image ? <img src={image} alt={title} className="w-20 h-20 object-cover rounded-md ml-4" /> : ''}
+          {image ? <img src={image} alt={title} className="w-20 h-20 object-cover rounded-md ml-4 ml-auto" /> : ''}
         </div>
       </div>
 

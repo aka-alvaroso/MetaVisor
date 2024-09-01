@@ -19,9 +19,15 @@ import MetadataModal from './Components/MetadataModal';
 
 function App () {
   const [search, setSearch] = useState('');
-  const [activePlatform, setactivePlatform] = useState('');
+  const [activePlatform, setactivePlatform] = useState('WhatsApp');
   const [activeExample, setActiveExample] = useState('');
-  const [metadata, setMetadata] = useState(null);
+  const [metadata, setMetadata] = useState({
+    title: 'Preview Simulator - Preview, edit and generate',
+    description: 'You can preview any url in different social media, you can also edit this data to your liking!',
+    image: 'https://images.unsplash.com/photo-1724764147764-3eb2a66cdf11?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    url: 'https://www.previewsimulator.com/',
+    publisher: 'Preview Simulator'
+  });
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleExampleClick = (url) => {
@@ -80,21 +86,19 @@ function App () {
           </button>
         </div>
 
+        <h1 className='text-center text-4xl font-bold'>Preview Simulator</h1>
+
         <Searcher search={search} onSearchChange={handleSearchChange} onFetchMetadata={handleFetchMetadata} />
       </header>
-
 
       {/* EJEMPLOS */}
       <Examples active={activeExample} handleActive={handleExampleClick} />
 
-
-      {/* BOTÓN MODAL */}
-      <ModalBtn metadata={metadata} openModal={handleModalOpen} />
-
-
       {/* PLATAFORMAS */}
       {metadata ? <PlatformSelector active={activePlatform} handleActive={handlePlatformClick} /> : ''}
 
+      {/* BOTÓN MODAL */}
+      <ModalBtn metadata={metadata} openModal={handleModalOpen} />
 
       {/* PREVISUALIZACIÓN */}
       <div className='w-full flex justify-center items-center my-6'>
@@ -118,8 +122,6 @@ function App () {
 
 
     </div>
-
-
   );
 }
 
