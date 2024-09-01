@@ -16,7 +16,6 @@ import InstagramPreview from './Components/InstagramPreview';
 import DiscordPreview from './Components/DiscordPreview';
 import TamTamPreview from './Components/TamTamPreview';
 
-
 function App () {
   const [search, setSearch] = useState('');
   const [activePlatform, setactivePlatform] = useState('');
@@ -43,6 +42,8 @@ function App () {
     setMetadata(data);
   }
 
+
+
   return (
     <div className="App">
 
@@ -58,9 +59,9 @@ function App () {
       </header>
 
 
-
       {/* EJEMPLOS */}
       <Examples active={activeExample} handleActive={handleExampleClick} />
+
 
 
       {/* PLATAFORMAS */}
@@ -77,6 +78,7 @@ function App () {
         {activePlatform === 'Discord' && <DiscordPreview metadata={metadata} />}
         {activePlatform === 'TamTam' && <TamTamPreview metadata={metadata} />}
       </div>
+
 
     </div>
 

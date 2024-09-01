@@ -7,9 +7,9 @@ function WhatsAppPreview ({ metadata }) {
   return (
     <div className='w-full flex flex-col justify-center items-center'>
 
-      <div className='w-11/12 p-2 rounded-lg bg-amber-100 mt-4 sm:w-9/12 md:w-1/2 lg:w-4/12'>
+      {/* <div className='w-11/12 p-2 rounded-lg bg-amber-100 mt-4 sm:w-9/12 md:w-1/2 lg:w-4/12'>
         <p><span className='font-bold'>Info:</span> Para que se muestre la previsualiación en WhatsApp, esta se debe cargar antes de enviar el mensaje.</p>
-      </div>
+      </div> */}
 
       <h2 className='font-bold text-lg mt-10'>Previsualización en WhatsApp Desktop</h2>
 
