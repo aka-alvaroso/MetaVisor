@@ -1,18 +1,30 @@
-// src/Components/FacebookPreview.js
 import React from 'react';
 
 function FacebookPreview ({ metadata }) {
-  const { title, description, image, url } = metadata;
+  const { title, description, image, url, publisher } = metadata;
 
   return (
-    <div className="w-11/12 p-4 border rounded-lg sm:w-9/12 md:w-1/2 lg:w-4/12">
-      {image && <img src={image} alt={title} className="w-full h-48 object-cover rounded-md" />}
-      <div className="mt-2">
-        <h3 className="mt-2 font-bold">{title}</h3>
-        <p className="text-sm text-gray-700">{description}</p>
-        <a href={url} className="text-blue-500 mt-2 inline-block">{url}</a>
-      </div>
-    </div>
+    <div className="w-full flex flex-col justify-center items-center">
+
+      <h2 className='font-bold text-lg mt-10 text-center'>Previsualización en Facebook Feed</h2>
+      < div className="w-11/12 p-4 border rounded-lg sm:w-9/12 md:w-1/2 lg:w-4/12 bg-white shadow-md" >
+        {image ? (
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-48 object-cover rounded-md"
+          />
+        ) : <div className="w-full h-48 bg-neutral-100 rounded-md"></div>
+        }
+        <div className="mt-2">
+          <p className="text-sm text-gray-600">{publisher ? publisher : url}</p>
+          <h3 className="font-bold text-lg text-gray-800">{title}</h3>
+          <p className="text-sm text-gray-600">{description}</p>
+
+        </div>
+      </div >
+
+    </div >
   );
 }
 

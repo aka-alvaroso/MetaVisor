@@ -86,7 +86,7 @@ function App () {
           </button>
         </div>
 
-        <h1 className='text-center text-4xl font-bold'>Preview Simulator</h1>
+        <h1 className='text-center text-4xl font-bold'>MetaVisor</h1>
 
         <Searcher search={search} onSearchChange={handleSearchChange} onFetchMetadata={handleFetchMetadata} />
       </header>
