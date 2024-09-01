@@ -11,6 +11,11 @@ function Searcher ({ search, onSearchChange, onFetchMetadata }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (search === '') {
+      return;
+    }
+
     setLoading(true);
     try {
       const response = await fetch(`http://localhost:5000/api/metadata?url=${encodeURIComponent(search)}`);
