@@ -80,13 +80,13 @@ function App () {
 
       {/* HEADER */}
       <header className='w-full'>
-        <div className='w-full flex justify-end'>
+        {/* <div className='w-full flex justify-end m-2'>
           <button>
             <FontAwesomeIcon icon={faSun} className='m-2 p-2 text-2xl' />
           </button>
-        </div>
+        </div> */}
 
-        <h1 className='text-center text-4xl font-bold'>MetaVisor</h1>
+        <h1 className='text-center text-4xl font-bold mt-10'>MetaVisor</h1>
 
         <Searcher search={search} onSearchChange={handleSearchChange} onFetchMetadata={handleFetchMetadata} />
       </header>

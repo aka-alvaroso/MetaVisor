@@ -7,7 +7,7 @@ function FacebookPreview ({ metadata }) {
     <div className="w-full flex flex-col justify-center items-center">
 
       <h2 className='font-bold text-lg mt-10 text-center'>Previsualización en Facebook Feed</h2>
-      < div className="w-11/12 p-4 border rounded-lg sm:w-9/12 md:w-1/2 lg:w-4/12 bg-white shadow-md" >
+      <a href={url} className="w-11/12 p-4 border rounded-lg sm:w-9/12 md:w-1/2 lg:w-4/12 bg-white shadow-md" >
         {image ? (
           <img
             src={image}
@@ -22,9 +22,9 @@ function FacebookPreview ({ metadata }) {
           <p className="text-sm text-gray-600">{description}</p>
 
         </div>
-      </div >
+      </a>
 
-    </div >
+    </div>
   );
 }
 

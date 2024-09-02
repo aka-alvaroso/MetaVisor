@@ -25,6 +25,25 @@ function TwitterPreview ({ metadata }) {
       </a >
 
 
+      <h2 className='font-bold text-lg mt-10 text-center'>Previsualización de vídeo de YouTube en Twitter</h2>
+      <a href={url} className="w-11/12 p-4 border rounded-lg sm:w-9/12 md:w-1/2 lg:w-4/12 bg-white shadow-md" >
+        <p className="text-sm text-gray-600">{publisher ? publisher : url}</p>
+        {image ? (
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-48 object-cover rounded-md"
+          />
+        ) : <div className="w-full h-48 bg-neutral-100 rounded-md"></div>
+        }
+        <div className="mt-2">
+          <h3 className="font-bold text-lg text-gray-800">{title}</h3>
+          <p className="text-sm text-gray-600">{description}</p>
+
+        </div>
+      </a>
+
+
     </div >
   );
 }

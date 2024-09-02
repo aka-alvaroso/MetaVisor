@@ -1,16 +1,14 @@
 // src/Components/TamTamPreview.js
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEyeSlash } from '@fortawesome/free-regular-svg-icons'
 
 function TamTamPreview ({ metadata }) {
-  const { title, image, url } = metadata;
+  // const { title, image, url, publisher, description } = metadata;
 
   return (
-    <div className="tamtam-preview p-4 border rounded-lg bg-white shadow-md">
-      {image && <img src={image} alt={title} className="w-full h-32 object-cover rounded-md" />}
-      <div className="mt-2">
-        <h3 className="font-bold text-lg">{title}</h3>
-        <a href={url} className="text-blue-500 hover:underline">{url}</a>
-      </div>
+    <div className="w-11/12 h-60 p-4 border rounded-lg sm:w-9/12 md:w-1/2 lg:w-4/12 bg-neutral-200 shadow-md flex items-center justify-center text-3xl text-neutral-500" >
+      <FontAwesomeIcon icon={faEyeSlash} />
     </div>
   );
 }

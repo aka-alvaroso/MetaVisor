@@ -6,6 +6,8 @@ function TelegramPreview ({ metadata }) {
 
   return (
     <div className='w-full flex flex-col justify-center items-center'>
+
+
       <h2 className='font-bold text-lg mt-10'>Previsualización en Telegram Desktop</h2>
       <div className="w-11/12 p-4 border rounded-lg sm:w-9/12 md:w-1/2 lg:w-4/12">
         <a href={url} className="text-blue-500 mb-2 inline-block">{url}</a>
@@ -19,7 +21,7 @@ function TelegramPreview ({ metadata }) {
         </div>
       </div>
 
-      <h2 className='font-bold text-lg mt-10'>Previsualización en Telegram Web</h2>
+      <h2 className='font-bold text-lg mt-10'>Previsualización en Telegram Web y Vídeos de YouTube</h2>
 
       <div className="w-11/12 p-4 border rounded-lg sm:w-9/12 md:w-1/2 lg:w-4/12">
         <a href={url} className="text-blue-500 mt-2 inline-block">{url}</a>
